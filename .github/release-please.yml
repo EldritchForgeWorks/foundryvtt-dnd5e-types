@@ -1,0 +1,9 @@
+handleGHRelease: true
+releaseLabels:
+  - "release"
+  - "automated"
+  - "type: release"
+prerelease: false
+branches:
+  - branch: main
+    handleGHRelease: true

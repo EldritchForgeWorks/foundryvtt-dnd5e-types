@@ -1,0 +1,31 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.0.4] - 2024-07-XX
+
+### Added
+- Comprehensive type definitions for DnD5e system version 4.3.9
+- Automated type generation from DnD5e system code
+- Type definitions for all major DnD5e classes:
+  - Actor5e, Item5e, Token5e
+  - ActorSheet5eCharacter, ActorSheet5eNPC, ActorSheet5eVehicle
+  - ActiveEffect5e, ChatMessage5e, Combat5e, Combatant5e
+  - JournalEntryPage5e, Dialog5e, Tooltips5e
+- Data models for actors and items
+- Configuration types
+- Dice rolling utilities
+- Utility functions
+
+### Changed
+- Restructured project to use declaration files (.d.ts)
+- Improved documentation with comprehensive examples
+- Enhanced GitHub Action for automatic updates
+
+## [1.0.0] - 2024-07-XX
+
+### Added
+- Initial release with basic type definitions

@@ -1,0 +1,47 @@
+{
+  "name": "foundryvtt-dnd5e-types",
+  "version": "1.0.4",
+  "description": "TypeScript type definitions for the DnD5e system in Foundry VTT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc --noEmit",
+    "analyze": "node scripts/analyze-dnd5e.js",
+    "update-types": "node scripts/update-types.js",
+    "download-dnd5e": "node scripts/download-dnd5e.js",
+    "fix-declarations": "node scripts/clean-declarations.js",
+    "check-dnd5e": "npm run download-dnd5e && npm run analyze && npm run update-types && npm run fix-declarations",
+    "prepublishOnly": "npm run build",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "foundry-vtt",
+    "typescript",
+    "dnd5e",
+    "types"
+  ],
+  "author": "Your Name",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/foundryvtt-dnd5e-types.git"
+  },
+  "homepage": "https://github.com/yourusername/foundryvtt-dnd5e-types",
+  "bugs": {
+    "url": "https://github.com/yourusername/foundryvtt-dnd5e-types/issues"
+  },
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "@league-of-foundry-developers/foundry-vtt-types": "^9.280.0",
+    "axios": "^1.6.2",
+    "adm-zip": "^0.5.10",
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "husky": "^8.0.3"
+  },
+  "peerDependencies": {
+    "@league-of-foundry-developers/foundry-vtt-types": "^9.280.0"
+  }
+}

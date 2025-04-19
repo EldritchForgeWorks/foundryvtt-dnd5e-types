@@ -1,0 +1,125 @@
+name: Update DnD5e Types
+
+on:
+  # Run on a schedule (once a day)
+  schedule:
+    - cron: '0 0 * * *'
+
+  # Allow manual triggering
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Specific DnD5e version to check (leave empty for latest)'
+        required: false
+        default: ''
+
+jobs:
+  check-for-updates:
+    runs-on: ubuntu-latest
+    outputs:
+      has_new_version: ${{ steps.check-version.outputs.has_new_version }}
+      new_version: ${{ steps.check-version.outputs.new_version }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Get latest DnD5e version
+        id: check-version
+        run: |
+          # Get the latest version from the DnD5e system.json
+          LATEST_VERSION=$(curl -s https://raw.githubusercontent.com/foundryvtt/dnd5e/master/system.json | jq -r '.version')
+
+          # If a specific version was provided, use that instead
+          if [[ "${{ github.event.inputs.version }}" != "" ]]; then
+            LATEST_VERSION="${{ github.event.inputs.version }}"
+          fi
+
+          # Get the current version we have
+          CURRENT_VERSION=$(cat .dnd5e-version 2>/dev/null || echo "0.0.0")
+
+          echo "Latest DnD5e version: $LATEST_VERSION"
+          echo "Current tracked version: $CURRENT_VERSION"
+
+          # Compare versions
+          if [ "$LATEST_VERSION" != "$CURRENT_VERSION" ]; then
+            echo "New version detected: $LATEST_VERSION"
+            echo "has_new_version=true" >> $GITHUB_OUTPUT
+            echo "new_version=$LATEST_VERSION" >> $GITHUB_OUTPUT
+          else
+            echo "No new version detected"
+            echo "has_new_version=false" >> $GITHUB_OUTPUT
+          fi
+
+  update-types:
+    needs: check-for-updates
+    if: needs.check-for-updates.outputs.has_new_version == 'true'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download DnD5e system
+        run: |
+          NEW_VERSION="${{ needs.check-for-updates.outputs.new_version }}"
+
+          # Create a temporary directory for the DnD5e system
+          mkdir -p tmp/dnd5e
+
+          # Download the specific version of DnD5e
+          curl -L "https://github.com/foundryvtt/dnd5e/archive/refs/tags/release-$NEW_VERSION.zip" -o dnd5e.zip
+          unzip dnd5e.zip -d tmp/
+
+          # Move to a consistent location
+          mv tmp/dnd5e-release-$NEW_VERSION tmp/dnd5e-source
+
+          echo "Downloaded DnD5e version $NEW_VERSION"
+
+      - name: Analyze DnD5e system
+        id: analyze
+        run: |
+          NEW_VERSION="${{ needs.check-for-updates.outputs.new_version }}"
+
+          # Run the analysis script
+          node scripts/analyze-dnd5e.js tmp/dnd5e-source
+
+          # Update the version file
+          echo "$NEW_VERSION" > .dnd5e-version
+
+      - name: Update type definitions
+        run: |
+          NEW_VERSION="${{ needs.check-for-updates.outputs.new_version }}"
+
+          # Run the update script
+          node scripts/update-types.js
+
+          # Fix declaration files
+          node scripts/clean-declarations.js
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "feat: update types for DnD5e v${{ needs.check-for-updates.outputs.new_version }}"
+          title: "Update types for DnD5e v${{ needs.check-for-updates.outputs.new_version }}"
+          body: |
+            This PR updates the type definitions for DnD5e v${{ needs.check-for-updates.outputs.new_version }}.
+
+            Changes were automatically generated based on analysis of the DnD5e system code.
+
+            Please review the changes carefully before merging.
+          branch: update-types-dnd5e-v${{ needs.check-for-updates.outputs.new_version }}
+          base: main
+          labels: |
+            automated
+            dnd5e-update
