@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1](https://github.com/EldritchForgeWorks/foundryvtt-dnd5e-types/compare/v1.0.0...v1.0.1) (2025-04-19)
+
+
+### Bug Fixes
+
+* update package-lock.json ([bf087dc](https://github.com/EldritchForgeWorks/foundryvtt-dnd5e-types/commit/bf087dca1de28bccdf90cfff0491b3c359c9ea74))
+
 ## 1.0.0 (2025-04-19)
 
 
