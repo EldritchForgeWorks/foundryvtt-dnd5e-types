@@ -1,6 +1,6 @@
 {
   "name": "foundryvtt-dnd5e-types",
-  "version": "1.1.1",
+  "version": "1.1.4",
   "description": "TypeScript type definitions for the DnD5e system in Foundry VTT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,7 +8,7 @@
     "dist/**/*"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "node scripts/build.js",
     "test": "tsc --noEmit",
     "analyze": "node scripts/analyze-dnd5e.js",
     "update-types": "node scripts/update-types.js",
@@ -34,21 +34,21 @@
     "dungeons-and-dragons",
     "d&d"
   ],
-  "author": "Your Name",
+  "author": "Savant",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/foundryvtt-dnd5e-types.git"
+    "url": "https://github.com/EldritchForgeWorks/foundryvtt-dnd5e-types.git"
   },
-  "homepage": "https://github.com/yourusername/foundryvtt-dnd5e-types",
+  "homepage": "https://github.com/EldritchForgeWorks/foundryvtt-dnd5e-types",
   "bugs": {
-    "url": "https://github.com/yourusername/foundryvtt-dnd5e-types/issues"
+    "url": "https://github.com/EldritchForgeWorks/foundryvtt-dnd5e-types/issues"
   },
   "engines": {
     "node": ">=18.0.0"
   },
   "funding": {
     "type": "github",
-    "url": "https://github.com/sponsors/yourusername"
+    "url": "https://github.com/sponsors/EldritchForgeWorks"
   },
   "license": "MIT",
   "private": false,

@@ -1,3 +1,5 @@
+import { Application } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/applications/application';
+
 /**
  * The DnD5e Dialog5e class
  */

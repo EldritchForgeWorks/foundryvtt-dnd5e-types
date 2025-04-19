@@ -1,3 +1,6 @@
+import { Token } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/documents/token';
+import { Actor5e } from './actor5e';
+
 /**
  * The DnD5e Token5e class
  */

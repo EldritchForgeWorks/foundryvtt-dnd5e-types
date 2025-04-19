@@ -1,3 +1,5 @@
+import { Actor } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/documents/actor';
+
 /**
  * The DnD5e Actor5e class
  */
