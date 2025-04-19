@@ -111,11 +111,13 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "feat: update types for DnD5e v${{ needs.check-for-updates.outputs.new_version }}"
-          title: "Update types for DnD5e v${{ needs.check-for-updates.outputs.new_version }}"
+          title: "feat: update types for DnD5e v${{ needs.check-for-updates.outputs.new_version }}"
           body: |
             This PR updates the type definitions for DnD5e v${{ needs.check-for-updates.outputs.new_version }}.
 
             Changes were automatically generated based on analysis of the DnD5e system code.
+
+            This PR uses the conventional commit format `feat:` to trigger a minor version bump when merged.
 
             Please review the changes carefully before merging.
           branch: update-types-dnd5e-v${{ needs.check-for-updates.outputs.new_version }}

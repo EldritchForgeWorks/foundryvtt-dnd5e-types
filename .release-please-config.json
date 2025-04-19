@@ -7,7 +7,14 @@
       "bump-minor-pre-major": true,
       "bump-patch-for-minor-pre-major": true,
       "draft": false,
-      "prerelease": false
+      "prerelease": false,
+      "extra-files": [
+        {
+          "type": "json",
+          "path": "version.json",
+          "jsonpath": "$.dnd5eVersion"
+        }
+      ]
     }
   },
   "plugins": ["node-workspace"]

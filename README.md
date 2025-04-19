@@ -314,6 +314,14 @@ This package follows [Semantic Versioning](https://semver.org/):
 - **Minor version** (0.x.0): New features or types added in a backward-compatible manner
 - **Patch version** (0.0.x): Bug fixes and minor improvements
 
+### Automated Versioning
+
+The package version is automatically updated using [Release Please](https://github.com/googleapis/release-please) based on [Conventional Commits](https://www.conventionalcommits.org/):
+
+- `feat:` commits trigger a minor version bump
+- `fix:` commits trigger a patch version bump
+- `feat!:` or `fix!:` commits trigger a major version bump
+
 ### DnD5e Compatibility
 
 Each release of this package is compatible with a specific version of the DnD5e system. The compatible DnD5e version is noted:
@@ -321,8 +329,9 @@ Each release of this package is compatible with a specific version of the DnD5e 
 - In the README (see the badge at the top)
 - In the package description on npm
 - In the GitHub release notes
+- In the `version.json` file in the repository
 
-When a new version of DnD5e is released, this package will be automatically updated to support it, typically within a few days.
+When a new version of DnD5e is released, this package will be automatically updated to support it, typically within a few days. These updates are made with `feat:` commits, which trigger a minor version bump.
 
 ## License
 

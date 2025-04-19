@@ -5,5 +5,11 @@
  * It is designed to be used alongside the @league-of-foundry-developers/foundry-vtt-types package.
  */
 
-// Re-export all types from the types directory
-export * from './types';
+// Re-export all types from the various modules
+export * from './types/documents';
+export * from './types/data';
+export * from './types/config';
+export * from './types/dice';
+export * from './types/applications';
+export * from './types/utils';
+export * from './types/tooltips';

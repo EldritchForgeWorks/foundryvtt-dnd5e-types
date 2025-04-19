@@ -12,11 +12,11 @@
     "types": ["@league-of-foundry-developers/foundry-vtt-types"],
     "noImplicitAny": false,
     "noEmit": false,
-    "emitDeclarationOnly": true,
+    "emitDeclarationOnly": false,
     "allowJs": true,
     "checkJs": false,
     "noImplicitThis": false
   },
-  "include": ["src/**/*.d.ts"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts"],
   "exclude": ["node_modules", "dist"]
 }
