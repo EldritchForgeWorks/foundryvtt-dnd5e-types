@@ -68,20 +68,38 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const fs = require('fs')
-            const versionInfo = JSON.parse(fs.readFileSync('./version.json', 'utf8'))
-            const releaseId = ${{ steps.release.outputs.release_id }}
-            const releaseData = await github.rest.repos.getRelease({
+            var fs = require('fs');
+            var versionInfo = JSON.parse(fs.readFileSync('./version.json', 'utf8'));
+            var releaseId = ${{ steps.release.outputs.release_id }};
+
+            github.rest.repos.getRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
               release_id: releaseId
-            })
+            }).then(function(releaseResponse) {
+              var releaseData = releaseResponse.data;
+              var dnd5eVersion = versionInfo.dnd5eVersion;
+              var tagName = releaseData.tag_name;
+              var repoOwner = context.repo.owner;
+              var repoName = context.repo.repo;
 
-            const newBody = `## Compatible with DnD5e version ${versionInfo.dnd5eVersion}\n\n${releaseData.data.body}\n\n## Installation\n\n\`\`\`bash\nnpm install --save-dev foundryvtt-dnd5e-types@${releaseData.data.tag_name}\n\`\`\`\n\nOr with a specific DnD5e version tag:\n\n\`\`\`bash\nnpm install --save-dev foundryvtt-dnd5e-types@dnd5e-v${versionInfo.dnd5eVersion}\n\`\`\`\n\n## Documentation\n\nFor full documentation, visit the [GitHub repository](https://github.com/${context.repo.owner}/${context.repo.repo})`
+              var newBody = '## Compatible with DnD5e version ' + dnd5eVersion + '\n\n' +
+                releaseData.body + '\n\n' +
+                '## Installation\n\n' +
+                '```bash\n' +
+                'npm install --save-dev foundryvtt-dnd5e-types@' + tagName + '\n' +
+                '```\n\n' +
+                'Or with a specific DnD5e version tag:\n\n' +
+                '```bash\n' +
+                'npm install --save-dev foundryvtt-dnd5e-types@dnd5e-v' + dnd5eVersion + '\n' +
+                '```\n\n' +
+                '## Documentation\n\n' +
+                'For full documentation, visit the [GitHub repository](https://github.com/' + repoOwner + '/' + repoName + ')';
 
-            await github.rest.repos.updateRelease({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              release_id: releaseId,
-              body: newBody
-            })
+              return github.rest.repos.updateRelease({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                release_id: releaseId,
+                body: newBody
+              });
+            });
