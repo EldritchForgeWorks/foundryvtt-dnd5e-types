@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.0.0 (2025-04-19)
+
+
+### Features
+
+* Setup initial typescript types. ([996f584](https://github.com/EldritchForgeWorks/foundryvtt-dnd5e-types/commit/996f584cdd6e3cbb1c7161dce577e5413f95f819))
+
+
+### Bug Fixes
+
+* Add issues:write permission to workflow to allow label creation on PR ([6c1c7f6](https://github.com/EldritchForgeWorks/foundryvtt-dnd5e-types/commit/6c1c7f600ed803d22445a9e6eeba1e5726ab4c21))
+
 ## [1.0.4] - 2024-07-XX
 
 ### Added
