@@ -58,26 +58,30 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         if: ${{ steps.release.outputs.release_created }}
 
+      - name: Build documentation
+        run: npm run docs
+        if: ${{ steps.release.outputs.release_created }}
+
       - name: Update release description
         if: ${{ steps.release.outputs.release_created }}
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const fs = require('fs');
-            const versionInfo = JSON.parse(fs.readFileSync('./version.json', 'utf8'));
-            const releaseId = ${{ steps.release.outputs.release_id }};
+            const fs = require('fs')
+            const versionInfo = JSON.parse(fs.readFileSync('./version.json', 'utf8'))
+            const releaseId = ${{ steps.release.outputs.release_id }}
             const releaseData = await github.rest.repos.getRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
               release_id: releaseId
-            });
+            })
 
-            const newBody = `## Compatible with DnD5e version ${versionInfo.dnd5eVersion}\n\n${releaseData.data.body}\n\n## Installation\n\n\`\`\`bash\nnpm install --save-dev foundryvtt-dnd5e-types@${releaseData.data.tag_name}\n\`\`\`\n\nOr with a specific DnD5e version tag:\n\n\`\`\`bash\nnpm install --save-dev foundryvtt-dnd5e-types@dnd5e-v${versionInfo.dnd5eVersion}\n\`\`\`\n\n## Documentation\n\nFor full documentation, visit the [GitHub repository](https://github.com/${context.repo.owner}/${context.repo.repo})`;
+            const newBody = `## Compatible with DnD5e version ${versionInfo.dnd5eVersion}\n\n${releaseData.data.body}\n\n## Installation\n\n\`\`\`bash\nnpm install --save-dev foundryvtt-dnd5e-types@${releaseData.data.tag_name}\n\`\`\`\n\nOr with a specific DnD5e version tag:\n\n\`\`\`bash\nnpm install --save-dev foundryvtt-dnd5e-types@dnd5e-v${versionInfo.dnd5eVersion}\n\`\`\`\n\n## Documentation\n\nFor full documentation, visit the [GitHub repository](https://github.com/${context.repo.owner}/${context.repo.repo})`
 
             await github.rest.repos.updateRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
               release_id: releaseId,
               body: newBody
-            });
+            })

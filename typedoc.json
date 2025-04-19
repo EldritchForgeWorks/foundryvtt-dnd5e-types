@@ -1,0 +1,15 @@
+{
+  "entryPoints": ["src/index.ts"],
+  "out": "docs",
+  "name": "Foundry VTT DnD5e Types",
+  "includeVersion": true,
+  "hideGenerator": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeExternals": true,
+  "readme": "README.md",
+  "plugin": ["typedoc-plugin-markdown"],
+  "theme": "default",
+  "githubPages": true,
+  "exclude": ["**/node_modules/**", "**/*.spec.ts"]
+}

@@ -16,13 +16,23 @@
     "fix-declarations": "node scripts/clean-declarations.js",
     "check-dnd5e": "npm run download-dnd5e && npm run analyze && npm run update-types && npm run fix-declarations",
     "prepublishOnly": "npm run build",
-    "prepare": "husky install"
+    "docs": "typedoc --out docs src/index.ts",
+    "docs:versioned": "node scripts/generate-docs-version-selector.js",
+    "prepare": "husky install",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\""
   },
   "keywords": [
     "foundry-vtt",
-    "typescript",
     "dnd5e",
-    "types"
+    "typescript",
+    "types",
+    "declarations",
+    "foundry",
+    "dungeons-and-dragons",
+    "d&d"
   ],
   "author": "Your Name",
   "repository": {
@@ -33,16 +43,28 @@
   "bugs": {
     "url": "https://github.com/yourusername/foundryvtt-dnd5e-types/issues"
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/yourusername"
+  },
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "typescript": "^5.8.3",
-    "@league-of-foundry-developers/foundry-vtt-types": "^9.280.0",
-    "axios": "^1.6.2",
-    "adm-zip": "^0.5.10",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
-    "husky": "^8.0.3"
+    "@league-of-foundry-developers/foundry-vtt-types": "^9.280.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "adm-zip": "^0.5.10",
+    "axios": "^1.6.2",
+    "eslint": "^8.56.0",
+    "husky": "^8.0.3",
+    "prettier": "^3.2.5",
+    "typedoc": "0.28.2",
+    "typescript": "^5.8.3"
   },
   "peerDependencies": {
     "@league-of-foundry-developers/foundry-vtt-types": "^9.280.0"

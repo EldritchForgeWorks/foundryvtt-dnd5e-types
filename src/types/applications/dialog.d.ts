@@ -16,5 +16,4 @@ export declare class Dialog5e extends Application {
    * Submit the dialog
    */
   submit(options?: Record<string, any>): Promise<any>;
-
 }

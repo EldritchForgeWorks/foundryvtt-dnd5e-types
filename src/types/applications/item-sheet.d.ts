@@ -16,5 +16,4 @@ export declare class ItemSheet5e extends ItemSheet {
    * Get the item's data
    */
   getData(): Promise<Record<string, any>>;
-
 }

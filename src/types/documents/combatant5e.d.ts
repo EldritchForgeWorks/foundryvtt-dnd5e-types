@@ -16,5 +16,4 @@ export declare class Combatant5e extends Combatant {
    * Get the combat's turn
    */
   getTurn(): number;
-
 }

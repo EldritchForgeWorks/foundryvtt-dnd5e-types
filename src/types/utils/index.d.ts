@@ -40,7 +40,10 @@ export declare function calculateSpellLevel(characterLevel: number, spellSlotLev
 /**
  * Calculate the spell slots for a given character level and spellcasting ability
  */
-export declare function calculateSpellSlots(characterLevel: number, spellcastingAbility: string): Record<string, { value: number; max: number }>;
+export declare function calculateSpellSlots(
+  characterLevel: number,
+  spellcastingAbility: string
+): Record<string, { value: number; max: number }>;
 
 /**
  * Calculate the carrying capacity for a given strength score
@@ -50,7 +53,10 @@ export declare function calculateCarryingCapacity(strengthScore: number): number
 /**
  * Calculate the encumbrance for a given weight and strength score
  */
-export declare function calculateEncumbrance(weight: number, strengthScore: number): {
+export declare function calculateEncumbrance(
+  weight: number,
+  strengthScore: number
+): {
   value: number;
   max: number;
   pct: number;
@@ -60,32 +66,56 @@ export declare function calculateEncumbrance(weight: number, strengthScore: numb
 /**
  * Calculate the passive perception for a given wisdom score and proficiency bonus
  */
-export declare function calculatePassivePerception(wisdomScore: number, proficiencyBonus: number, proficiencyLevel: number): number;
+export declare function calculatePassivePerception(
+  wisdomScore: number,
+  proficiencyBonus: number,
+  proficiencyLevel: number
+): number;
 
 /**
  * Calculate the passive investigation for a given intelligence score and proficiency bonus
  */
-export declare function calculatePassiveInvestigation(intelligenceScore: number, proficiencyBonus: number, proficiencyLevel: number): number;
+export declare function calculatePassiveInvestigation(
+  intelligenceScore: number,
+  proficiencyBonus: number,
+  proficiencyLevel: number
+): number;
 
 /**
  * Calculate the passive insight for a given wisdom score and proficiency bonus
  */
-export declare function calculatePassiveInsight(wisdomScore: number, proficiencyBonus: number, proficiencyLevel: number): number;
+export declare function calculatePassiveInsight(
+  wisdomScore: number,
+  proficiencyBonus: number,
+  proficiencyLevel: number
+): number;
 
 /**
  * Calculate the passive stealth for a given dexterity score and proficiency bonus
  */
-export declare function calculatePassiveStealth(dexterityScore: number, proficiencyBonus: number, proficiencyLevel: number): number;
+export declare function calculatePassiveStealth(
+  dexterityScore: number,
+  proficiencyBonus: number,
+  proficiencyLevel: number
+): number;
 
 /**
  * Calculate the spell save DC for a given spellcasting ability and proficiency bonus
  */
-export declare function calculateSpellSaveDC(spellcastingAbility: string, proficiencyBonus: number, abilityModifiers: Record<string, number>): number;
+export declare function calculateSpellSaveDC(
+  spellcastingAbility: string,
+  proficiencyBonus: number,
+  abilityModifiers: Record<string, number>
+): number;
 
 /**
  * Calculate the spell attack bonus for a given spellcasting ability and proficiency bonus
  */
-export declare function calculateSpellAttackBonus(spellcastingAbility: string, proficiencyBonus: number, abilityModifiers: Record<string, number>): number;
+export declare function calculateSpellAttackBonus(
+  spellcastingAbility: string,
+  proficiencyBonus: number,
+  abilityModifiers: Record<string, number>
+): number;
 
 /**
  * Calculate the initiative bonus for a given dexterity modifier
@@ -95,47 +125,80 @@ export declare function calculateInitiativeBonus(dexterityModifier: number): num
 /**
  * Calculate the armor class for a given dexterity modifier and armor
  */
-export declare function calculateArmorClass(dexterityModifier: number, armor: Item5e | null): number;
+export declare function calculateArmorClass(
+  dexterityModifier: number,
+  armor: Item5e | null
+): number;
 
 /**
  * Calculate the hit point maximum for a given constitution modifier and hit dice
  */
-export declare function calculateHitPointMaximum(constitutionModifier: number, hitDice: Record<string, number>): number;
+export declare function calculateHitPointMaximum(
+  constitutionModifier: number,
+  hitDice: Record<string, number>
+): number;
 
 /**
  * Calculate the hit dice total for a given level and class
  */
-export declare function calculateHitDiceTotal(level: number, classes: Item5e[]): Record<string, number>;
+export declare function calculateHitDiceTotal(
+  level: number,
+  classes: Item5e[]
+): Record<string, number>;
 
 /**
  * Calculate the proficiency level for a given proficiency
  */
-export declare function calculateProficiencyLevel(proficiency: string, proficiencies: Record<string, boolean>): number;
+export declare function calculateProficiencyLevel(
+  proficiency: string,
+  proficiencies: Record<string, boolean>
+): number;
 
 /**
  * Calculate the skill modifier for a given skill
  */
-export declare function calculateSkillModifier(skill: string, abilityModifiers: Record<string, number>, proficiencyBonus: number, proficiencyLevel: number): number;
+export declare function calculateSkillModifier(
+  skill: string,
+  abilityModifiers: Record<string, number>,
+  proficiencyBonus: number,
+  proficiencyLevel: number
+): number;
 
 /**
  * Calculate the save modifier for a given ability
  */
-export declare function calculateSaveModifier(ability: string, abilityModifiers: Record<string, number>, proficiencyBonus: number, proficiencyLevel: number): number;
+export declare function calculateSaveModifier(
+  ability: string,
+  abilityModifiers: Record<string, number>,
+  proficiencyBonus: number,
+  proficiencyLevel: number
+): number;
 
 /**
  * Calculate the attack bonus for a given weapon
  */
-export declare function calculateAttackBonus(weapon: Item5e, abilityModifiers: Record<string, number>, proficiencyBonus: number, proficiencyLevel: number): number;
+export declare function calculateAttackBonus(
+  weapon: Item5e,
+  abilityModifiers: Record<string, number>,
+  proficiencyBonus: number,
+  proficiencyLevel: number
+): number;
 
 /**
  * Calculate the damage bonus for a given weapon
  */
-export declare function calculateDamageBonus(weapon: Item5e, abilityModifiers: Record<string, number>): number;
+export declare function calculateDamageBonus(
+  weapon: Item5e,
+  abilityModifiers: Record<string, number>
+): number;
 
 /**
  * Calculate the damage for a given weapon
  */
-export declare function calculateDamage(weapon: Item5e, abilityModifiers: Record<string, number>): {
+export declare function calculateDamage(
+  weapon: Item5e,
+  abilityModifiers: Record<string, number>
+): {
   parts: Array<[string, string]>;
   versatile: string;
 };

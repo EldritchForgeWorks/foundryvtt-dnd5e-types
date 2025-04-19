@@ -16,5 +16,4 @@ export declare class Token5e extends Token {
    * Get the token's dimensions
    */
   getDimensions(): { width: number; height: number };
-
 }

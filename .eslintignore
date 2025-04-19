@@ -1,0 +1,20 @@
+# Build output
+dist/
+docs/
+
+# Node modules
+node_modules/
+
+# Scripts
+scripts/
+
+# Examples
+examples/
+
+# Temporary files
+tmp/
+dnd5e-analysis.json
+
+# Configuration files
+*.config.js
+commitlint.config.js

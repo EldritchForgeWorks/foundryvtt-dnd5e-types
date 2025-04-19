@@ -1,0 +1,21 @@
+# Build output
+dist/
+docs/
+
+# Node modules
+node_modules/
+
+# Package files
+package-lock.json
+yarn.lock
+
+# Temporary files
+tmp/
+dnd5e-analysis.json
+
+# IDE files
+.vscode/
+.idea/
+
+# Markdown files (to preserve line breaks)
+*.md

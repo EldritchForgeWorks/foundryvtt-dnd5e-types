@@ -16,5 +16,4 @@ export declare class Tooltips5e {
    * Deactivate tooltips for a specific element
    */
   static deactivate(element: HTMLElement): void;
-
 }

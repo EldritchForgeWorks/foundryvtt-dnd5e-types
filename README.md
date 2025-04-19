@@ -14,6 +14,14 @@ The type definitions are automatically generated and updated from the official D
 
 **Compatible with DnD5e version 4.3.9**
 
+## Documentation
+
+Detailed API documentation is available at [https://yourusername.github.io/foundryvtt-dnd5e-types/](https://yourusername.github.io/foundryvtt-dnd5e-types/)
+
+The documentation is versioned, so you can access documentation for specific versions:
+- Latest: [https://yourusername.github.io/foundryvtt-dnd5e-types/latest/](https://yourusername.github.io/foundryvtt-dnd5e-types/latest/)
+- Specific version: [https://yourusername.github.io/foundryvtt-dnd5e-types/v1.0.0/](https://yourusername.github.io/foundryvtt-dnd5e-types/v1.0.0/)
+
 ## Installation
 
 ### Requirements
@@ -147,6 +155,23 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 2. Use the correct Node.js version: `nvm use` (requires [nvm](https://github.com/nvm-sh/nvm))
 3. Install dependencies: `npm install`
 4. Build the project: `npm run build`
+
+### Code Quality Tools
+
+This project uses several tools to ensure code quality:
+
+- **ESLint**: Lints TypeScript code
+  - Run: `npm run lint`
+  - Fix issues: `npm run lint:fix`
+
+- **Prettier**: Formats code consistently
+  - Run: `npm run format`
+  - Check formatting: `npm run format:check`
+
+- **TypeDoc**: Generates API documentation
+  - Run: `npm run docs`
+  - Output: `docs/` directory
+  - Versioned docs: Published automatically with each release to GitHub Pages
 
 ### Adding New Types
 

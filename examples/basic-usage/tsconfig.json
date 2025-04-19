@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "types": [
+      "@league-of-foundry-developers/foundry-vtt-types",
+      "../../dist"
+    ]
+  }
+}

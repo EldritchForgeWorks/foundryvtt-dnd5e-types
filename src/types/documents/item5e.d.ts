@@ -16,5 +16,4 @@ export declare class Item5e extends Item {
    * Get the item's data
    */
   getData(): Promise<Record<string, any>>;
-
 }

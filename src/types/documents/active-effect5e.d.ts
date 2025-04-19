@@ -16,5 +16,4 @@ export declare class ActiveEffect5e extends ActiveEffect {
    * Get the effect's target
    */
   getTarget(): Actor5e | null;
-
 }

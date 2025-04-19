@@ -16,5 +16,4 @@ export declare class Actor5e extends Actor {
    * Get the actor's data
    */
   getData(): Promise<Record<string, any>>;
-
 }
