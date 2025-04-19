@@ -61,7 +61,7 @@
     "adm-zip": "^0.5.10",
     "axios": "^1.6.2",
     "eslint": "^8.56.0",
-    "husky": "^8.0.3",
+    "husky": "^9.1.7",
     "prettier": "^3.2.5",
     "typedoc": "0.25.12",
     "typedoc-plugin-markdown": "^3.17.1",
