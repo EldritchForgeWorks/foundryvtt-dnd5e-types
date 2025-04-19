@@ -6,10 +6,15 @@
   "hideGenerator": true,
   "excludePrivate": true,
   "excludeProtected": true,
-  "excludeExternals": true,
+  "excludeExternals": false,
   "readme": "README.md",
   "plugin": ["typedoc-plugin-markdown"],
-  "theme": "markdown",
+  "theme": "default",
   "githubPages": true,
-  "exclude": ["**/node_modules/**", "**/*.spec.ts"]
+  "exclude": ["**/node_modules/**", "**/*.spec.ts"],
+  "externalSymbolLinkMappings": {
+    "foundry": {
+      "abstract.Document": "https://foundryvtt.com/api/classes/foundry.abstract.Document.html"
+    }
+  }
 }

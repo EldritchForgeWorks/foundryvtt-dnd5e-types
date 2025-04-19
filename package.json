@@ -16,7 +16,7 @@
     "fix-declarations": "node scripts/clean-declarations.js",
     "check-dnd5e": "npm run download-dnd5e && npm run analyze && npm run update-types && npm run fix-declarations",
     "prepublishOnly": "npm run build",
-    "docs": "typedoc --out docs src/index.ts",
+    "docs": "typedoc",
     "docs:versioned": "node scripts/generate-docs-version-selector.js",
     "prepare": "husky install",
     "lint": "eslint src --ext .ts",
@@ -63,9 +63,9 @@
     "eslint": "^8.56.0",
     "husky": "^8.0.3",
     "prettier": "^3.2.5",
-    "typedoc": "0.28.2",
+    "typedoc": "0.25.12",
     "typedoc-plugin-markdown": "^3.17.1",
-    "typescript": "^5.8.3"
+    "typescript": "5.4.5"
   },
   "peerDependencies": {
     "@league-of-foundry-developers/foundry-vtt-types": "^9.280.0"
