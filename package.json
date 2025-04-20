@@ -19,10 +19,11 @@
     "docs": "typedoc",
     "docs:versioned": "node scripts/generate-docs-version-selector.js",
     "prepare": "husky install",
-    "lint": "eslint src --ext .ts",
-    "lint:fix": "eslint src --ext .ts --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "format": "prettier --write \"src/**/*.ts\"",
-    "format:check": "prettier --check \"src/**/*.ts\""
+    "format:check": "prettier --check \"src/**/*.ts\"",
+    "check": "npm run lint && npm run format:check"
   },
   "keywords": [
     "foundry-vtt",
@@ -53,21 +54,26 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "@commitlint/cli": "^17.7.1",
-    "@commitlint/config-conventional": "^17.7.0",
-    "@league-of-foundry-developers/foundry-vtt-types": "^9.280.0",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0",
-    "adm-zip": "^0.5.10",
-    "axios": "^1.6.2",
-    "eslint": "^8.56.0",
-    "husky": "^8.0.3",
-    "prettier": "^3.2.5",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@eslint/eslintrc": "3.3.1",
+    "@eslint/js": "9.25.0",
+    "@league-of-foundry-developers/foundry-vtt-types": "^9.280.1",
+    "@stylistic/eslint-plugin": "^1.6.3",
+    "@typescript-eslint/eslint-plugin": "^8.30.1",
+    "@typescript-eslint/parser": "^8.30.1",
+    "eslint-config-prettier": "^9.1.0",
+    "adm-zip": "^0.5.16",
+    "axios": "^1.8.4",
+    "eslint": "^9.25.0",
+    "globals": "16.0.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.5.3",
     "typedoc": "0.25.12",
     "typedoc-plugin-markdown": "^3.17.1",
     "typescript": "5.4.5"
   },
   "peerDependencies": {
-    "@league-of-foundry-developers/foundry-vtt-types": "^9.280.0"
+    "@league-of-foundry-developers/foundry-vtt-types": "^9.280.1"
   }
 }

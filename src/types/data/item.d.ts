@@ -461,6 +461,7 @@ export interface ToolData extends ItemDataCommon {
  * The loot item data
  */
 export interface LootData extends ItemDataCommon {
+  faux: any;
   // No additional properties
 }
 
@@ -709,6 +710,7 @@ export interface ClassData extends ItemDataCommon {
  */
 export interface BackgroundData extends ItemDataCommon {
   // No additional properties
+  faux: any;
 }
 
 /**
@@ -716,6 +718,7 @@ export interface BackgroundData extends ItemDataCommon {
  */
 export interface RaceData extends ItemDataCommon {
   // No additional properties
+  faux: any;
 }
 
 /**
