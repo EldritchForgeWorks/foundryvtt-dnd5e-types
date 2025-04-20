@@ -2,22 +2,30 @@
  * Re-exports of Foundry VTT types to ensure proper inheritance
  */
 
+// Import the Foundry VTT types package to ensure the global types are available
+import '@league-of-foundry-developers/foundry-vtt-types';
+
+// Re-export the global types
+
+// Game
+export type Game = globalThis.Game;
+
 // Applications
-export { Application } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/apps/app';
-export { ActorSheet } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/apps/forms/actor';
-export { ItemSheet } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/apps/forms/item';
+export type Application = globalThis.Application;
+export type ActorSheet = globalThis.ActorSheet;
+export type ItemSheet = globalThis.ItemSheet;
 
 // Documents
-export { Actor } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/actor';
-export { Item } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/item';
-export { Token } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token';
-export { ChatMessage } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/chat-message';
-export { Combat } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/combat';
-export { Combatant } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/combatant';
-export { ActiveEffect } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/active-effect';
-export { JournalEntryPage } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/journal-entry';
+export type Actor = globalThis.Actor;
+export type Item = globalThis.Item;
+export type Token = globalThis.Token;
+export type ChatMessage = globalThis.ChatMessage;
+export type Combat = globalThis.Combat;
+export type Combatant = globalThis.Combatant;
+export type ActiveEffect = globalThis.ActiveEffect;
+export type JournalEntryPage = globalThis.JournalEntryPage;
 
 // Data types
-export { ActorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/actor';
-export { ItemData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/item';
-export { TokenData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/token';
+export type ActorData = globalThis.ActorData;
+export type ItemData = globalThis.ItemData;
+export type TokenData = globalThis.TokenData;
