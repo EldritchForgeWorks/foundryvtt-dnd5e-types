@@ -1,6 +1,6 @@
 {
   "name": "foundryvtt-dnd5e-types",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "TypeScript type definitions for the DnD5e system in Foundry VTT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
