@@ -1,4 +1,4 @@
-import { ItemSheet } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/applications/item-sheet';
+import { ItemSheet } from '../foundry';
 
 /**
  * The DnD5e ItemSheet5e class

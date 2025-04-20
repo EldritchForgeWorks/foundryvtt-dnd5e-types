@@ -1,4 +1,4 @@
-import { Token } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/documents/token';
+import { Token } from '../foundry';
 import { Actor5e } from './actor5e';
 
 /**

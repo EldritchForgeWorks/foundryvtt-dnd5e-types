@@ -1,4 +1,4 @@
-import { Item } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/documents/item';
+import { Item } from '../foundry';
 
 /**
  * The DnD5e Item5e class

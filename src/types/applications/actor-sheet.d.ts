@@ -1,4 +1,4 @@
-import { ActorSheet } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/applications/actor-sheet';
+import { ActorSheet } from '../foundry';
 
 /**
  * The DnD5e ActorSheet5e class

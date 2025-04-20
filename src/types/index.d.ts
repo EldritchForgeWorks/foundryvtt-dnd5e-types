@@ -12,6 +12,7 @@ import * as Config from './config';
 import * as Dice from './dice';
 import * as Applications from './applications';
 import * as Utils from './utils';
+import * as Foundry from './foundry';
 
 // Declare the global dnd5e namespace
 declare global {
@@ -25,6 +26,7 @@ declare global {
     export import dice = Dice;
     export import applications = Applications;
     export import utils = Utils;
+    export import foundry = Foundry;
   }
 
   // Extend the global game object with dnd5e-specific properties
@@ -62,4 +64,4 @@ declare global {
   }
 }
 
-export { Documents, Data, Config, Dice, Applications, Utils };
+export { Documents, Data, Config, Dice, Applications, Utils, Foundry };
