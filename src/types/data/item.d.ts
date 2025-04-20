@@ -722,7 +722,7 @@ export interface RaceData extends ItemDataCommon {
 }
 
 /**
- * The item data type
+ * The item data for DnD5e items
  */
 export type ItemData =
   | WeaponData

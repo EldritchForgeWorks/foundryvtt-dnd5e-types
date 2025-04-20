@@ -38,7 +38,7 @@
   "author": "Savant",
   "repository": {
     "type": "git",
-    "url": "https://github.com/EldritchForgeWorks/foundryvtt-dnd5e-types.git"
+    "url": "git+https://github.com/EldritchForgeWorks/foundryvtt-dnd5e-types.git"
   },
   "homepage": "https://github.com/EldritchForgeWorks/foundryvtt-dnd5e-types",
   "bugs": {

@@ -13,6 +13,7 @@ import * as Dice from './dice';
 import * as Applications from './applications';
 import * as Utils from './utils';
 import * as Foundry from './foundry';
+import * as Game from './game';
 
 // Declare the global dnd5e namespace
 declare global {
@@ -27,35 +28,12 @@ declare global {
     export import applications = Applications;
     export import utils = Utils;
     export import foundry = Foundry;
+    export import game = Game;
   }
 
   // Extend the global game object with dnd5e-specific properties
-  interface Game {
-    dnd5e: {
-      /**
-       * The dnd5e configuration object
-       */
-      config: typeof CONFIG.DND5E;
-
-      /**
-       * The dnd5e dice roller
-       */
-      dice: typeof dnd5e.dice;
-
-      /**
-       * The dnd5e macro API
-       */
-      macros: {
-        rollItemMacro: (itemName: string) => Promise<void>;
-        rollAbilityMacro: (abilityName: string) => Promise<void>;
-        rollSkillMacro: (skillName: string) => Promise<void>;
-      };
-
-      /**
-       * The dnd5e utility functions
-       */
-      utils: typeof dnd5e.utils;
-    };
+  interface Game extends dnd5e.game.DnD5eGame {
+    faux: string;
   }
 
   // Extend the CONFIG object with DND5E property
@@ -64,4 +42,4 @@ declare global {
   }
 }
 
-export { Documents, Data, Config, Dice, Applications, Utils, Foundry };
+export { Documents, Data, Config, Dice, Applications, Utils, Foundry, Game };

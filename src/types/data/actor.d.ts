@@ -853,7 +853,7 @@ export interface VehicleData extends ActorDataCommon {
 }
 
 /**
- * The actor data type
+ * The actor data for DnD5e actors
  */
 export type ActorData = CharacterData | NPCData | VehicleData;
 

@@ -4,3 +4,4 @@
 
 export * from './actor';
 export * from './item';
+export * from './token';

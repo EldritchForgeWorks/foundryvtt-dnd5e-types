@@ -57,6 +57,11 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         if: ${{ steps.release.outputs.release_created }}
+      - name: Tag as latest
+        run: npm dist-tag add foundryvtt-dnd5e-types@${{ steps.release.outputs.tag_name }} latest
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        if: ${{ steps.release.outputs.release_created }}
 
       - name: Build documentation
         run: npm run docs

@@ -10,6 +10,9 @@ import '@league-of-foundry-developers/foundry-vtt-types';
 // Game
 export type Game = globalThis.Game;
 
+// Re-export the DnD5eGame interface
+export { DnD5eGame } from '../game';
+
 // Applications
 export type Application = globalThis.Application;
 export type ActorSheet = globalThis.ActorSheet;
@@ -25,7 +28,8 @@ export type Combatant = globalThis.Combatant;
 export type ActiveEffect = globalThis.ActiveEffect;
 export type JournalEntryPage = globalThis.JournalEntryPage;
 
-// Data types
-export type ActorData = globalThis.ActorData;
-export type ItemData = globalThis.ItemData;
-export type TokenData = globalThis.TokenData;
+// Data types - use our own data types instead of the global ones
+export { ActorData } from '../data/actor';
+export { ItemData } from '../data/item';
+// Use our own TokenData type
+export { TokenData } from '../data/token';
