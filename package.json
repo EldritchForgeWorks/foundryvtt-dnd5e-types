@@ -61,7 +61,7 @@
     "@league-of-foundry-developers/foundry-vtt-types": "^9.280.1",
     "@stylistic/eslint-plugin": "^1.6.3",
     "@typescript-eslint/eslint-plugin": "^8.30.1",
-    "@typescript-eslint/parser": "^8.30.1",
+    "@typescript-eslint/parser": "^8.31.0",
     "eslint-config-prettier": "^9.1.0",
     "adm-zip": "^0.5.16",
     "axios": "^1.8.4",
