@@ -70,7 +70,7 @@
     "husky": "^9.1.7",
     "prettier": "^3.5.3",
     "typedoc": "0.25.12",
-    "typedoc-plugin-markdown": "^3.17.1",
+    "typedoc-plugin-markdown": "^4.6.3",
     "typescript": "5.4.5"
   },
   "peerDependencies": {
