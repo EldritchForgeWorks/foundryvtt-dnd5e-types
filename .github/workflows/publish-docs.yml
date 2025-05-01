@@ -75,7 +75,7 @@ jobs:
           node ../scripts/generate-docs-version-selector.js
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.5.0
+        uses: JamesIves/github-pages-deploy-action@v4.7.3
         with:
           folder: docs-versioned
           branch: gh-pages
